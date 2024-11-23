@@ -1,0 +1,124 @@
+/* General Header Styling */
+.header {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px; /* Reduced padding for a smaller header */
+    background: linear-gradient(90deg, #0b0616, #07040c, #130918); /* Same gradient as footer */
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+  
+  .logo-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .tagline {
+    font-size: 0.7rem;
+    font-style: italic;
+    margin: 0;
+    color: #ffe4ec;
+  }
+  
+  .nav {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: #fff;
+    padding: 8px 16px; /* Adjusted padding */
+    border-radius: 8px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    position: relative;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+    overflow: hidden;
+  }
+  
+  .nav-link:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+    color: #ff567c;
+  }
+  
+  /* Special Call-to-Action Link */
+  .special-link {
+    background: linear-gradient(45deg, #fdd835, #f57f17);
+    color: #000;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+  
+  .special-link:hover {
+    background: #ffcc00;
+    color: #fff;
+    transform: scale(1.1);
+  }
+  
+  /* Falling Stars Container */
+  .falling-stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  
+  /* Falling Stars with Pseudo-Elements */
+  .falling-stars::before,
+  .falling-stars::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    animation: generate-stars 0.5s linear infinite;
+  }
+  
+  @keyframes generate-stars {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(100%);
+    }
+  }
+  
+  /* Individual Stars */
+  .falling-stars span {
+    position: absolute;
+    top: -50px;
+    width: 2px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+    animation: falling-star 4s linear infinite;
+    opacity: 0.6;
+  }
+  
+  @keyframes falling-star {
+    0% {
+      transform: translateY(-100px) translateX(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh) translateX(-10px);
+      opacity: 0;
+    }
+  }
+  
